@@ -9,7 +9,7 @@ const createUser = (req, res) => {
   // our pre save hook should kick in here saving this user to the DB with an encrypted password.
   User.create({ username, password })
     .then(response => res.json(response))
-    .catch(error => res.status(500),json({ error: error.message }));
+    .catch(error => res.status(500).json({ error: error.message }));
 };
 
 //   const newUser = new User ({ username, password });
